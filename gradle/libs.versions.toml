@@ -1,0 +1,8 @@
+[versions]
+compileSdk = "34"
+minSdk = "21"
+targetSdk = "33"
+gradleBuild = "8.1.1"
+buildTools = "34.0.0"
+kotlinCore = { require = "1.9.0" }
+kotlinCoroutines = { require = "1.7.3" }

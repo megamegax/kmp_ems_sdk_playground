@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="sample-react-js">
+    <output-path>$PROJECT_DIR$/sample-react/build/libs</output-path>
+    <root id="archive" name="sample-react-js.jar">
+      <element id="module-output" name="UnifiedEmarsysSDK.sample-react.jsMain" />
+    </root>
+  </artifact>
+</component>

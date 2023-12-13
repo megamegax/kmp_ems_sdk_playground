@@ -1,8 +1,32 @@
 [versions]
 compileSdk = "34"
+kotlinReact = "18.2.0-pre.624"
+kotlinReactRouterDom = "6.15.0-pre.624"
+kotlinStyled = "5.3.11-pre.624"
+kotlinxHtmlJs = "0.9.1"
 minSdk = "21"
 targetSdk = "33"
 gradleBuild = "8.1.1"
 buildTools = "34.0.0"
 kotlinCore = { require = "1.9.0" }
 kotlinCoroutines = { require = "1.7.3" }
+ktor = "2.3.4"
+agp = "8.0.0"
+org-jetbrains-kotlin-android = "1.9.0"
+junit = "4.13.2"
+runner = "1.0.2"
+espresso-core = "3.0.2"
+appcompat-v7 = "28.0.0"
+[libraries]
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+kotlin-react = { module = "org.jetbrains.kotlin-wrappers:kotlin-react" }
+kotlin-react-dom = { module = "org.jetbrains.kotlin-wrappers:kotlin-react-dom" }
+kotlin-react-router-dom = { module = "org.jetbrains.kotlin-wrappers:kotlin-react-router-dom" }
+kotlin-styled = { module = "org.jetbrains.kotlin-wrappers:kotlin-styled", version.ref = "kotlinStyled" }
+kotlinx-html-js = { module = "org.jetbrains.kotlinx:kotlinx-html-js", version.ref = "kotlinxHtmlJs" }
+runner = { group = "com.android.support.test", name = "runner", version.ref = "runner" }
+espresso-core = { group = "com.android.support.test.espresso", name = "espresso-core", version.ref = "espresso-core" }
+appcompat-v7 = { group = "com.android.support", name = "appcompat-v7", version.ref = "appcompat-v7" }
+[plugins]
+com-android-application = { id = "com.android.application", version.ref = "agp" }
+org-jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "org-jetbrains-kotlin-android" }

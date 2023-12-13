@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="emarsys-sdk-js-1.0-SNAPSHOT">
+    <output-path>$PROJECT_DIR$/emarsys-sdk/build/libs</output-path>
+    <root id="archive" name="emarsys-sdk-js-1.0-SNAPSHOT.jar">
+      <element id="module-output" name="UnifiedEmarsysSDK.emarsys-sdk.jsMain" />
+    </root>
+  </artifact>
+</component>

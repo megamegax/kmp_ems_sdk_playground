@@ -3,6 +3,8 @@ plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.plugin.serialization")
     id("org.jetbrains.dokka")
+    id("org.kodein.mock.mockmp")
+    id("com.google.devtools.ksp")
 }
 
 group = "com.emarsys"
@@ -56,6 +58,8 @@ kotlin {
             dependencies {
                 implementation(kotlin("test"))
                 implementation("io.ktor:ktor-client-mock:2.3.4")
+                implementation("io.kotest:kotest-framework-engine:5.8.0")
+                implementation("io.kotest:kotest-assertions-core:5.8.0")
             }
         }
         val jsMain by getting {
@@ -79,4 +83,9 @@ kotlin {
         }
         val androidInstrumentedTest by getting
     }
+}
+
+mockmp {
+    usesHelper = true
+    installWorkaround()
 }

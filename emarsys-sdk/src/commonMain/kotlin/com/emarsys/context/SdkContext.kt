@@ -8,17 +8,17 @@ import com.emarsys.features.Feature
 import io.ktor.http.*
 
 data class SdkContext(
-    val sdkConfig: SdkConfig,
-    var defaultUrls: DefaultUrls,
-    var sdkState: SdkState = SdkState.INACTIVE,
-    var features: MutableList<Feature> = mutableListOf(),
-    val inAppDnd: Boolean = false,
-    var config: EmarsysConfig? = null
-) {
-    fun createUrl(
+    override val sdkConfig: SdkConfig,
+    override var defaultUrls: DefaultUrls,
+    override var sdkState: SdkState = SdkState.INACTIVE,
+    override var features: MutableList<Feature> = mutableListOf(),
+    override val inAppDnd: Boolean = false,
+    override var config: EmarsysConfig? = null
+) : ISdkContext {
+    override fun createUrl(
         baseUrl: String,
-        version: String = "v3",
-        withAppCode: Boolean = true,
+        version: String,
+        withAppCode: Boolean,
         path: String?
     ): URLBuilder {
         var url = "$baseUrl/$version"
@@ -53,4 +53,20 @@ data class SdkContext(
             this.defaultUrls = defaultUrls
         }
     }
+}
+
+
+interface ISdkContext {
+    val sdkConfig: SdkConfig
+    var defaultUrls: DefaultUrls
+    var sdkState: SdkState
+    var features: MutableList<Feature>
+    val inAppDnd: Boolean
+    var config: EmarsysConfig?
+    fun createUrl(
+        baseUrl: String,
+        version: String = "v3",
+        withAppCode: Boolean = true,
+        path: String?
+    ): URLBuilder
 }

@@ -1,8 +1,10 @@
 package com.emarsys.clients
 
 import com.emarsys.clients.contact.model.ContactTokenResponse
+import com.emarsys.context.ISdkContext
 import com.emarsys.context.SdkContext
 import com.emarsys.core.DefaultUrls
+import com.emarsys.core.IDefaultUrls
 import com.emarsys.core.networking.HttpUrlRequest
 import com.emarsys.core.networking.NetworkClient
 import com.emarsys.core.networking.isOk
@@ -16,8 +18,8 @@ import io.ktor.util.*
 
 class EmarsysClient(
     private val networkClient: NetworkClient,
-    private val defaultUrls: DefaultUrls,
-    private val sdkContext: SdkContext,
+    private val defaultUrls: IDefaultUrls,
+    private val sdkContext: ISdkContext,
     private var sessionContext: SessionContext
 ) : NetworkClient {
 

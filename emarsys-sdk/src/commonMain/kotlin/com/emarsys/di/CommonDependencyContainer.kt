@@ -23,6 +23,7 @@ import com.emarsys.core.networking.NetworkClient
 import com.emarsys.core.providers.DoubleProvider
 import com.emarsys.core.providers.TimestampProvider
 import com.emarsys.core.providers.UuidProvider
+import com.emarsys.core.session.DefaultSessionContext
 import com.emarsys.core.session.SessionContext
 import com.emarsys.core.state.StateMachine
 import com.emarsys.remoteconfig.DefaultRemoteConfigHandler
@@ -60,7 +61,12 @@ abstract class CommonDependencyContainer : DependencyContainer {
             "https://log-dealer.eservice.emarsys.net"
         )
     }
-    override val sessionContext: SessionContext by lazy { SessionContext(timestampProvider, deviceInfoCollector) }
+    override val sessionContext: SessionContext by lazy {
+        DefaultSessionContext(
+            timestampProvider,
+            deviceInfoCollector
+        )
+    }
     override val contactApi: ContactApi by lazy {
         Contact(
             LoggingContact(sdkLogger),
